@@ -1,10 +1,12 @@
+import Image from 'next/image';
 import * as React from 'react';
 
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
+
+import heroPicture from '../../public/images/Zip-it.jpg';
 
 /**
  * SVGR Support
@@ -27,9 +29,16 @@ export default function HomePage() {
 
       <main>
         <section className='bg-white'>
-          <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
+          <Image
+            className='container m-0 object-center p-5'
+            src={heroPicture}
+            width={740}
+            height={360}
+            alt='zipIt business card hero'
+          />
+          <div className='layout relative flex flex-col items-center justify-center py-12 text-center'>
             <Vercel className='text-5xl' />
-            <h1 className='mt-4'>
+            <h1 className='mt-2'>
               Zip <span className='text-slate-600'>IT</span>
             </h1>
             <p className='mt-2 text-sm text-gray-800'>
@@ -51,23 +60,10 @@ export default function HomePage() {
               See all components
             </ButtonLink>
 
-            <UnstyledLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-              className='mt-4'
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                width='92'
-                height='32'
-                src='https://vercel.com/button'
-                alt='Deploy with Vercel'
-              />
-            </UnstyledLink>
-
             <footer className='absolute bottom-2 text-gray-700'>
               © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
+              <UnderlineLink href='/'>
+                Zip <span className='text-slate-600'>IT</span>
               </UnderlineLink>
             </footer>
           </div>
