@@ -38,7 +38,7 @@ export default function HomePage() {
           />
           <div className='layout relative flex flex-col items-center justify-center py-12 text-center'>
             <Vercel className='text-5xl' />
-            <h1 className='mt-2'>
+            <h1 className='mt-2 hover:scale-110 hover:underline'>
               Zip <span className='text-slate-600'>IT</span>
             </h1>
             <p className='mt-2 text-sm text-gray-800'>
@@ -59,6 +59,36 @@ export default function HomePage() {
             <ButtonLink className='mt-6' href='/components' variant='light'>
               See all components
             </ButtonLink>
+            <h1 className='p-4 uppercase text-slate-600 hover:scale-110 hover:underline'>
+              Services
+            </h1>
+            <div className='grid gap-4 py-2 sm:grid-cols-1 lg:grid-cols-3'>
+              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+                <h3 className='hover:underline'>B2C Leads:</h3> We offer leads
+                for businesses looking to reach consumers, including information
+                about individuals and their purchasing habits, interests, and
+                demographics.
+              </div>
+              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+                <h3 className='hover:underline'>B2B Leads:</h3> We also provide
+                leads for businesses seeking to reach other businesses,
+                including information about companies and their employees,
+                business type, and purchasing power.
+              </div>
+              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+                <h3 className='hover:underline'>
+                  Industries we specialize in:
+                </h3>
+                <ul>
+                  <li className='hover:underline'>Healthcare</li>
+                  <li className='hover:underline'>Finance</li>
+                  <li className='hover:underline'>Technology</li>
+                  <li className='hover:underline'>Retail</li>
+                  <li className='hover:underline'>Manufacturing</li>
+                  <li className='hover:underline'>And more!</li>
+                </ul>
+              </div>
+            </div>
 
             <footer className='absolute bottom-2 text-gray-700'>
               © {new Date().getFullYear()} By{' '}
