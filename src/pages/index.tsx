@@ -30,10 +30,8 @@ export default function HomePage() {
       <main>
         <section className='bg-white'>
           <Image
-            className='container m-0 object-center p-5'
+            className='container m-0 object-center p-5 lg:px-20'
             src={heroPicture}
-            width={740}
-            height={360}
             alt='zipIt business card hero'
           />
           <div className='layout relative flex flex-col items-center justify-center py-12 text-center'>
