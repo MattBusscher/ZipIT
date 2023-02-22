@@ -30,7 +30,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className='container w-64 outline'>
+    <div className='container w-72'>
       <form ref={form} onSubmit={sendEmail}>
         <label>
           Name <span className='italic text-slate-400'>(required)</span>
