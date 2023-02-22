@@ -115,4 +115,14 @@
   .animated-underline:focus-visible {
     background-size: 0 2px, 100% 2px;
   }
+
+  .dark {
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+  }
+
+  .dark body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
 }

@@ -28,7 +28,7 @@ export default function HomePage() {
       <Seo />
 
       <main>
-        <section className='bg-white'>
+        <section className=''>
           <Image
             className='container m-0 object-center p-5 lg:px-20'
             src={heroPicture}
@@ -38,12 +38,12 @@ export default function HomePage() {
           <div className='layout relative flex flex-col items-center justify-center py-12 text-center'>
             <Image src={logoPicture} alt='Zip it logo' />
             <h1 className='mt-2 hover:scale-110 hover:underline'>
-              Zip <span className='text-slate-600'>IT</span>
+              Zip <span className='text-slate-400'>IT</span>
             </h1>
-            <p className='mt-2 text-sm text-gray-800'>
+            <p className='mt-2 text-sm text-gray-700'>
               Welcome to{' '}
               <strong>
-                Zip <span className='text-slate-600'>IT</span>
+                Zip <span className='text-slate-400'>IT</span>
               </strong>
               , a leading provider of high-converting leads for businesses
               across multiple industries. Our proprietary data collection
@@ -51,14 +51,14 @@ export default function HomePage() {
               leads, ensuring that you receive the best possible results from
               your lead generation efforts.
             </p>
-            <p className='mt-2 text-sm text-gray-700'>
+            <p className='mt-2 text-sm text-gray-500'>
               <ArrowLink href='/contact'>See More</ArrowLink>
             </p>
 
             <ButtonLink className='mt-6' href='/components' variant='light'>
               See all components
             </ButtonLink>
-            <h1 className='p-4 uppercase text-slate-600 hover:scale-110 hover:underline'>
+            <h1 className='p-4 uppercase text-slate-400 hover:scale-110 hover:underline'>
               Services
             </h1>
             <div className='grid gap-4 py-2 sm:grid-cols-1 lg:grid-cols-3'>
