@@ -1,67 +1,54 @@
-import emailjs from 'emailjs/browser';
-import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import React, { useRef } from 'react';
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+export const ContactForm = () => {
+  const form = useRef();
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+      .sendForm(
+        'service_0b17gj5',
+        'template_dsetu7s',
+        form.current,
+        '887_CxnUe9-rOrIE1'
+      )
       .then(
         (result) => {
           // eslint-disable-next-line no-console
           console.log(result.text);
+          form.current.reset();
+          alert('Message sent');
         },
         (error) => {
           // eslint-disable-next-line no-console
           console.log(error.text);
         }
       );
-
-    setFormData({ name: '', email: '', message: '' });
-  };
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor='name'>Name:</label>
+    <div className='container w-64'>
+      <form ref={form} onSubmit={sendEmail}>
+        <label>Name</label>
+        <input type='text' name='user_name' className='input w-full max-w-xs' />
+        <label>Phone</label>
         <input
           type='text'
-          name='name'
-          value={formData.name}
-          onChange={handleChange}
+          name='phone_number'
+          className='input w-full max-w-xs'
         />
-      </div>
-      <div>
-        <label htmlFor='email'>Email:</label>
+        <label>Email</label>
         <input
           type='email'
-          name='email'
-          value={formData.email}
-          onChange={handleChange}
+          name='user_email'
+          className='input w-full max-w-xs'
         />
-      </div>
-      <div>
-        <label htmlFor='message'>Message:</label>
-        <textarea
-          name='message'
-          value={formData.message}
-          onChange={handleChange}
-        />
-      </div>
-      <button type='submit'>Send</button>
-    </form>
+        <label>Message</label>
+        <textarea name='message' className='input w-full max-w-xs' />
+        <input type='submit' value='Send' className='btn' />
+      </form>
+    </div>
   );
 };
-
-export default ContactForm;
