@@ -1,5 +1,6 @@
 import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 export const ContactForm = () => {
   const form = useRef();
@@ -29,25 +30,48 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className='container w-64'>
+    <div className='container w-64 outline'>
       <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type='text' name='user_name' className='input w-full max-w-xs' />
-        <label>Phone</label>
+        <label>
+          Name <span className='italic text-slate-400'>(required)</span>
+        </label>
+        <input
+          type='text'
+          name='user_name'
+          className='input w-full max-w-xs'
+          required
+        />
+
+        <label>
+          Email <span className='italic text-slate-400'>(required)</span>
+        </label>
+        <input
+          type='email'
+          name='user_email'
+          className='input w-full max-w-xs'
+          required
+        />
+        <label>
+          Phone <span className='italic text-slate-400'>(optional)</span>
+        </label>
         <input
           type='text'
           name='phone_number'
           className='input w-full max-w-xs'
         />
-        <label>Email</label>
-        <input
-          type='email'
-          name='user_email'
-          className='input w-full max-w-xs'
-        />
-        <label>Message</label>
+        <label>
+          Message<span className='italic text-slate-400'>(optional)</span>
+        </label>
         <textarea name='message' className='input w-full max-w-xs' />
-        <input type='submit' value='Send' className='btn' />
+        <input
+          type='submit'
+          value='Send'
+          className='rounded-md bg-slate-800 p-2 text-slate-50'
+        />
+        <ReCAPTCHA
+          sitekey='6Ld8K6UkAAAAACGb-Ns0T7mPLh0KXozxoOsJEEh7'
+          onChange={sendEmail}
+        />
       </form>
     </div>
   );
