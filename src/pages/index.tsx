@@ -1,11 +1,13 @@
+import Image from 'next/image';
 import * as React from 'react';
 
-import Layout from '@/components/layout/Layout';
 import ArrowLink from '@/components/links/ArrowLink';
 import ButtonLink from '@/components/links/ButtonLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
+
+import heroPicture from '../../public/images/Zip-it.jpg';
+import logoPicture from '../../public/images/ZipItlogoWhite.gif';
 
 /**
  * SVGR Support
@@ -14,7 +16,6 @@ import Seo from '@/components/Seo';
  * You can override the next-env if the type is important to you
  * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
  */
-import Vercel from '~/svg/Vercel.svg';
 
 // !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
 // Before you begin editing, follow all comments with `STARTERCONF`,
@@ -22,53 +23,81 @@ import Vercel from '~/svg/Vercel.svg';
 
 export default function HomePage() {
   return (
-    <Layout>
+    <>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
       <main>
-        <section className='bg-white'>
-          <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
-            <Vercel className='text-5xl' />
-            <h1 className='mt-4'>
-              Next.js + Tailwind CSS + TypeScript Starter
+        <section className=''>
+          <Image
+            className='container m-0 object-center p-5 lg:px-20'
+            src={heroPicture}
+            alt='zipIt business card hero'
+            priority
+          />
+          <div className='layout relative flex flex-col items-center justify-center py-12 text-center'>
+            <Image src={logoPicture} alt='Zip it logo' />
+            <h1 className='mt-2 hover:scale-110 hover:underline'>
+              Zip <span className='text-slate-400'>IT</span>
             </h1>
-            <p className='mt-2 text-sm text-gray-800'>
-              A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-              Import, Seo, Link component, pre-configured with Husky{' '}
-            </p>
             <p className='mt-2 text-sm text-gray-700'>
-              <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
-                See the repository
-              </ArrowLink>
+              Welcome to{' '}
+              <strong>
+                Zip <span className='text-slate-400'>IT</span>
+              </strong>
+              , a leading provider of high-converting leads for businesses
+              across multiple industries. Our proprietary data collection
+              methods allow us to deliver the most accurate and up-to-date
+              leads, ensuring that you receive the best possible results from
+              your lead generation efforts.
+            </p>
+            <p className='mt-2 text-sm text-gray-500'>
+              <ArrowLink href='/contact'>See More</ArrowLink>
             </p>
 
             <ButtonLink className='mt-6' href='/components' variant='light'>
               See all components
             </ButtonLink>
-
-            <UnstyledLink
-              href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-              className='mt-4'
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                width='92'
-                height='32'
-                src='https://vercel.com/button'
-                alt='Deploy with Vercel'
-              />
-            </UnstyledLink>
+            <h1 className='p-4 uppercase text-slate-400 hover:scale-110 hover:underline'>
+              Services
+            </h1>
+            <div className='grid gap-4 py-2 sm:grid-cols-1 lg:grid-cols-3'>
+              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+                <h3 className='hover:underline'>B2C Leads:</h3> We offer leads
+                for businesses looking to reach consumers, including information
+                about individuals and their purchasing habits, interests, and
+                demographics.
+              </div>
+              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+                <h3 className='hover:underline'>B2B Leads:</h3> We also provide
+                leads for businesses seeking to reach other businesses,
+                including information about companies and their employees,
+                business type, and purchasing power.
+              </div>
+              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+                <h3 className='hover:underline'>
+                  Industries we specialize in:
+                </h3>
+                <ul>
+                  <li className='hover:underline'>Healthcare</li>
+                  <li className='hover:underline'>Finance</li>
+                  <li className='hover:underline'>Technology</li>
+                  <li className='hover:underline'>Retail</li>
+                  <li className='hover:underline'>Manufacturing</li>
+                  <li className='hover:underline'>And more!</li>
+                </ul>
+              </div>
+            </div>
 
             <footer className='absolute bottom-2 text-gray-700'>
               © {new Date().getFullYear()} By{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Theodorus Clarence
+              <UnderlineLink href='/'>
+                Zip <span className='text-slate-600'>IT</span>
               </UnderlineLink>
             </footer>
           </div>
         </section>
       </main>
-    </Layout>
+    </>
   );
 }
