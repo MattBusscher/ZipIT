@@ -6,8 +6,7 @@ import ButtonLink from '@/components/links/ButtonLink';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import Seo from '@/components/Seo';
 
-import heroPicture from '../../public/images/Zip-it.jpg';
-import logoPicture from '../../public/images/ZipItlogoWhite.gif';
+import logoPicture from '../../public/images/ZipItlogoBlack.gif';
 
 /**
  * SVGR Support
@@ -29,14 +28,10 @@ export default function HomePage() {
 
       <main>
         <section className=''>
-          <Image
-            className='container m-0 object-center p-5 lg:px-20'
-            src={heroPicture}
-            alt='zipIt business card hero'
-            priority
-          />
           <div className='layout relative flex flex-col items-center justify-center py-12 text-center'>
-            <Image src={logoPicture} alt='Zip it logo' />
+            <div className='flex w-full items-center justify-center bg-black'>
+              <Image src={logoPicture} alt='Zip it logo' />
+            </div>
             <h1 className='mt-2 hover:scale-110 hover:underline'>
               Zip <span className='text-slate-400'>IT</span>
             </h1>
@@ -62,19 +57,19 @@ export default function HomePage() {
               Services
             </h1>
             <div className='grid gap-4 py-2 sm:grid-cols-1 lg:grid-cols-3'>
-              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+              <div className='rounded-md border-2 border-sky-800 p-4 text-slate-50'>
                 <h3 className='hover:underline'>B2C Leads:</h3> We offer leads
                 for businesses looking to reach consumers, including information
                 about individuals and their purchasing habits, interests, and
                 demographics.
               </div>
-              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+              <div className='rounded-md border-2 border-sky-800 p-4 text-slate-50'>
                 <h3 className='hover:underline'>B2B Leads:</h3> We also provide
                 leads for businesses seeking to reach other businesses,
                 including information about companies and their employees,
                 business type, and purchasing power.
               </div>
-              <div className='rounded-md border-2 border-sky-800 bg-sky-300 p-4 text-slate-50'>
+              <div className='rounded-md border-2 border-sky-800 p-4 text-slate-50'>
                 <h3 className='hover:underline'>
                   Industries we specialize in:
                 </h3>
